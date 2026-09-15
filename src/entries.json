@@ -1,0 +1,441 @@
+{
+	"symbolMeanings": {
+		"💐": "crucial",
+		"☠": "high priority",
+		"🎫": "requires driver’s license (cross out your ID #!)",
+		"📞": "must pick up a (gasp!) phone",
+		"💰": "site charges money for access or removal (whaaaat?)"
+	},
+	"entries": [
+		{
+			"id": "beenverified",
+			"name": "BeenVerified",
+			"symbols": [
+				"💐"
+			],
+			"searchUrl": "https://www.beenverified.com/app/optout/search",
+			"optOutUrl": "https://www.beenverified.com/app/optout/search",
+			"instructionsHtml": "<p>Find your information and opt out of <a href=\"https://www.beenverified.com/app/optout/search\" target=\"_blank\" rel=\"noopener noreferrer\">people search</a> and <a href=\"https://www.beenverified.com/app/optout/address-search\" target=\"_blank\" rel=\"noopener noreferrer\">property search</a>. BeenVerified also owns PeopleLooker and PeopleSmart. Be aware that BeenVerified only allows one opt-out per email address, so you may need to reach out via email for additional opt-outs. You will need to confirm your opt-out request by clicking on a link sent to you via email.</p>"
+		},
+		{
+			"id": "checkpeople",
+			"name": "CheckPeople",
+			"symbols": [
+				"💐"
+			],
+			"searchUrl": "",
+			"optOutUrl": "https://checkpeople.com/opt-out",
+			"instructionsHtml": "<p>First, request a copy of your data by filling out your name and email address under “Right to Know” at CheckPeople&#x27;s <a href=\"https://checkpeople.com/privacy-rights\" target=\"_blank\" rel=\"noopener noreferrer\">privacy rights page</a>. If CheckPeople has your information, <a href=\"https://checkpeople.com/opt-out\" target=\"_blank\" rel=\"noopener noreferrer\">opt out</a>. You will be required to share your birthdate and full legal name.</p>"
+		},
+		{
+			"id": "clustal",
+			"name": "Clustal",
+			"symbols": [
+				"💐"
+			],
+			"searchUrl": "http://Clustal.org",
+			"optOutUrl": "https://www.clustal.org/privacy-control",
+			"instructionsHtml": "<p>Go to <a href=\"http://Clustal.org\" target=\"_blank\" rel=\"noopener noreferrer\">Clustal.org</a> and look for your information in the top search bar. Click on “view full record” to grab the URL. (This is important, as the original URL will not work.) Then, go to the <a href=\"https://www.clustal.org/privacy-control\" target=\"_blank\" rel=\"noopener noreferrer\">Privacy Control page</a>, enter the URL, and click “remove my info.” Then enter your email address and click “remove my info” again. (Note that if you have more than one listing, you’ll need a different email address for each one.) Lastly, go to your inbox and click on the opt-out link in the email sent to you.</p>"
+		},
+		{
+			"id": "intelius",
+			"name": "Intelius",
+			"symbols": [
+				"💐"
+			],
+			"searchUrl": "https://www.intelius.com/",
+			"optOutUrl": "https://suppression.peopleconnect.us/login",
+			"instructionsHtml": "<p><a href=\"https://www.intelius.com/\" target=\"_blank\" rel=\"noopener noreferrer\">Find your information</a>. Opt out by emailing <a href=\"mailto:support@mailer.intelius.com\" target=\"_blank\" rel=\"noopener noreferrer\">support@mailer.intelius.com</a>, calling 1-888-245-1655, or <a href=\"https://suppression.peopleconnect.us/login\" target=\"_blank\" rel=\"noopener noreferrer\">filling out a form</a>. If you’re told that Intelius can&#x27;t find your account, you may need to confirm your mailing address, phone number, old email addresses, or other information via email. (As always, make sure Intelius already has the information before providing it.) Intelius owns Addresses.com, Addresssearch.com, Anywho, Classmates, DateCheck, Instant Checkmate, InstantPeopleFinder, iSearch, LookUpAnyone, Peopleconnect.us, PeopleFinder, PeopleLookup, Phonesbook, Publicrecords, Spock, Truthfinder, US Search, and Zabasearch.</p>"
+		},
+		{
+			"id": "men-stopping-violence",
+			"name": "Men Stopping Violence",
+			"symbols": [
+				"💐"
+			],
+			"searchUrl": "https://www.menstoppingviolence.org/people/",
+			"optOutUrl": "https://www.menstoppingviolence.org/opt-out/",
+			"instructionsHtml": "<p>First, <a href=\"https://www.menstoppingviolence.org/people/\" target=\"_blank\" rel=\"noopener noreferrer\">search for your name</a>. Then enter the URL in <a href=\"https://www.menstoppingviolence.org/opt-out/\" target=\"_blank\" rel=\"noopener noreferrer\">the opt-out page</a>. Click “remove my info,” and add your email address. Click on the confirmation link emailed to you.</p>"
+		},
+		{
+			"id": "mylife",
+			"name": "MyLife",
+			"symbols": [
+				"💐",
+				"📞"
+			],
+			"searchUrl": "https://www.mylife.com",
+			"optOutUrl": "https://www.mylife.com/privacyrequest",
+			"instructionsHtml": "<p><a href=\"https://www.mylife.com\" target=\"_blank\" rel=\"noopener noreferrer\">Find your information</a>, and then <a href=\"https://www.mylife.com/privacyrequest\" target=\"_blank\" rel=\"noopener noreferrer\">opt out</a>. Another option is to email your removal request to <a href=\"mailto:privacy@mylife.com\" target=\"_blank\" rel=\"noopener noreferrer\">privacy@mylife.com</a> with your name and a link to your profile. MyLife will try to get you to create an account with a copy of your driver’s license to submit a profile removal request, and we’ve received reports that emailing the <a href=\"mailto:info@mylife.com\" target=\"_blank\" rel=\"noopener noreferrer\">info@mylife.com</a> or <a href=\"mailto:removalrequests@mylife.com\" target=\"_blank\" rel=\"noopener noreferrer\">removalrequests@mylife.com</a> email addresses will require a phone call to (888) 704-1900. Previously, calling that number and pressing 2 allowed you to be removed from MyLife (and Wink.com) after providing your name, age, date of birth, email address, current mailing address, and a previous mailing address, but this no longer appears to be the case. (It also appears that you can sign up for a free membership to remove your reputation profile, though not your personal information such as your home address.)</p>"
+		},
+		{
+			"id": "nuwber",
+			"name": "Nuwber",
+			"symbols": [
+				"💐"
+			],
+			"searchUrl": "https://nuwber.com/",
+			"optOutUrl": "https://nuwber.com/removal/link",
+			"instructionsHtml": "<p><a href=\"https://nuwber.com/\" target=\"_blank\" rel=\"noopener noreferrer\">Find your information</a>. Try to opt out on the <a href=\"https://nuwber.com/removal/link\" target=\"_blank\" rel=\"noopener noreferrer\">removal form</a>. Try &quot;filter by state&quot; to isolate the &quot;person&quot; URL you need. Don’t bother trying to get a full report; it’ll just waste your time with multiple steps and deceptive design trying to get you to pay for a subscription. If the URL you generate doesn&#x27;t work in the form or you run across other problems, take a screenshot of your results and send them to <a href=\"mailto:support@nuwber.com\" target=\"_blank\" rel=\"noopener noreferrer\">support@nuwber.com</a>, asking them to opt you out.</p>"
+		},
+		{
+			"id": "radaris",
+			"name": "Radaris",
+			"symbols": [
+				"💐"
+			],
+			"searchUrl": "https://radaris.com/",
+			"optOutUrl": "https://radaris.com/control-privacy",
+			"instructionsHtml": "<p>Find <a href=\"https://radaris.com/\" target=\"_blank\" rel=\"noopener noreferrer\">your information</a>. You can ignore sponsored links that take you to other sites. It is possible you do not have a Radaris listing even if you find sponsored links. Once you find your information you can remove it in one of two ways. If your information has a &quot;View Profile&quot; button, copy the URL. Use the URL to complete <a href=\"https://radaris.com/control-privacy\" target=\"_blank\" rel=\"noopener noreferrer\">a series of forms</a>, hitting “next” and waiting for new pages to load. If your information does not have a &quot;View Profile&quot; button, copy the text of your information or take a screenshot of it. Write an email to <a href=\"mailto:customer-service@radaris.com\" target=\"_blank\" rel=\"noopener noreferrer\">customer-service@radaris.com</a>. Include your information and ask them to take it down. They will send you an automatic reply telling you to use the online form. Respond to their automatic reply to tell them the form does not accept your information. You may need to reply to them several times before they confirm removal.</p>"
+		},
+		{
+			"id": "smartbackgroundchecks",
+			"name": "SmartBackgroundChecks",
+			"symbols": [
+				"💐"
+			],
+			"searchUrl": "https://www.smartbackgroundchecks.com/",
+			"optOutUrl": "https://www.smartbackgroundchecks.com/optout",
+			"instructionsHtml": "<p>Find <a href=\"https://www.smartbackgroundchecks.com/\" target=\"_blank\" rel=\"noopener noreferrer\">your information</a>. Then, <a href=\"https://www.smartbackgroundchecks.com/optout\" target=\"_blank\" rel=\"noopener noreferrer\">opt out</a>. This will likely also remove your information from PeopleFinders.</p>"
+		},
+		{
+			"id": "spokeo",
+			"name": "Spokeo",
+			"symbols": [
+				"💐",
+				"💰"
+			],
+			"searchUrl": "https://www.spokeo.com/search",
+			"optOutUrl": "https://www.spokeo.com/optout",
+			"instructionsHtml": "<p>Find <a href=\"https://www.spokeo.com/search\" target=\"_blank\" rel=\"noopener noreferrer\">your information</a> and remove your information by entering the URL of the profile you want removed and your email address on the <a href=\"https://www.spokeo.com/optout\" target=\"_blank\" rel=\"noopener noreferrer\">opt-out page</a>. Make sure to scroll down to the grammatically incorrect “opt out your information” section. You will need to confirm your opt-out request by clicking on a link sent to you via email. Unfortunately, we’ve received reports that Spokeo retains removed information for paid accounts, even if it doesn’t show up in free searches. It may be worth paying for a $1 trial to see if the data is still showing up even after you have opted out.</p>"
+		},
+		{
+			"id": "that-s-them",
+			"name": "That’s Them",
+			"symbols": [
+				"💐"
+			],
+			"searchUrl": "https://thatsthem.com/",
+			"optOutUrl": "https://thatsthem.com/optout",
+			"instructionsHtml": "<p>Find <a href=\"https://thatsthem.com/\" target=\"_blank\" rel=\"noopener noreferrer\">your information</a>. If it shows up, try to <a href=\"https://thatsthem.com/optout\" target=\"_blank\" rel=\"noopener noreferrer\">opt out</a>. Do not click on the Spokeo identity theft protection link, as it is a paid product.</p>"
+		},
+		{
+			"id": "white-pages",
+			"name": "White Pages",
+			"symbols": [
+				"💐",
+				"📞",
+				"💰"
+			],
+			"searchUrl": "https://www.whitepages.com/",
+			"optOutUrl": "https://www.whitepages.com/suppression_requests",
+			"instructionsHtml": "<p>Find <a href=\"https://www.whitepages.com/\" target=\"_blank\" rel=\"noopener noreferrer\">your information</a>, and then <a href=\"https://www.whitepages.com/suppression_requests\" target=\"_blank\" rel=\"noopener noreferrer\">opt out</a>. You will need to provide a phone number and enter an opt-out code when you receive the phone call. Opt-out information <a href=\"https://support.whitepages.com/hc/en-us/articles/115010106908-How-do-I-edit-or-remove-a-personal-listing\" target=\"_blank\" rel=\"noopener noreferrer\">is available</a>. You can also <a href=\"https://support.whitepages.com/hc/en-us/requests/new\" target=\"_blank\" rel=\"noopener noreferrer\">send a request form</a>. (I am including multiple options because these sites have a tendency to disappear.) Sometimes, information is removed from White Pages but not White Pages Premium, so make sure to double-check for your listing. Unfortunately, it may not be possible to opt out of White Pages Premium pages without an account. White Pages also owns <a href=\"https://www.411.com/\" target=\"_blank\" rel=\"noopener noreferrer\">411.com</a>, so check for your information there. The opt-out is the same. You may need to verify your opt-out by receiving an automated voice call and entering a four-digit code into your phone.</p>"
+		},
+		{
+			"id": "acxiom",
+			"name": "Acxiom",
+			"symbols": [
+				"☠"
+			],
+			"searchUrl": "",
+			"optOutUrl": "https://www.acxiom.com/optout/",
+			"instructionsHtml": "<p>It is hard to find your own info for free, but people in some countries can opt out using the following links: <a href=\"https://www.acxiom.com/privacy/fr/\" target=\"_blank\" rel=\"noopener noreferrer\">Portail des droits des consommateurs | Acxiom</a> (France) <a href=\"https://www.acxiom.com/privacy/it/\" target=\"_blank\" rel=\"noopener noreferrer\">Portale delle preferenze dei consumatori | Acxiom</a> (Italy) <a href=\"https://www.acxiom.com/privacy/es/\" target=\"_blank\" rel=\"noopener noreferrer\">Portal de preferencia del consumidor | Acxiom</a> (Spain) <a href=\"https://www.acxiom.com/optout/\" target=\"_blank\" rel=\"noopener noreferrer\">US Consumer Opt Out | Acxiom</a> (U.S.)</p><p>Users in Austria, Germany, India and Switzerland may email <a href=\"mailto:Datenschutz@acxiom.com\" target=\"_blank\" rel=\"noopener noreferrer\">Datenschutz@acxiom.com</a>.</p><p>Other international requests should go to the <a href=\"https://privacyportal.onetrust.com/webform/342ca6ac-4177-4827-b61e-19070296cbd3/6896cf25-6953-4500-9c69-5a8fb6f6f932\" target=\"_blank\" rel=\"noopener noreferrer\">Acxiom Consumer International Rights Portal</a>.</p><p>If you don’t have an email address, call (877) 774-2094 and follow the prompts.</p>"
+		},
+		{
+			"id": "advancedbackgroundchecks",
+			"name": "AdvancedBackgroundChecks",
+			"symbols": [
+				"☠"
+			],
+			"searchUrl": "https://www.advancedbackgroundchecks.com",
+			"optOutUrl": "https://www.advancedbackgroundchecks.com/opt-out",
+			"instructionsHtml": "<p>First, <a href=\"https://www.advancedbackgroundchecks.com\" target=\"_blank\" rel=\"noopener noreferrer\">search for your information</a>. Remember that you can leave your city, state, and age blank. If your information shows up, <a href=\"https://www.advancedbackgroundchecks.com/opt-out\" target=\"_blank\" rel=\"noopener noreferrer\">give an email to opt out</a> and click the link in the email to verify with either your date of birth or your address.</p>"
+		},
+		{
+			"id": "ancestry-com",
+			"name": "Ancestry.com",
+			"symbols": [
+				"☠"
+			],
+			"searchUrl": "https://www.ancestry.com/account/",
+			"optOutUrl": "mailto:privacy@ancestry.com",
+			"instructionsHtml": "<p>While you can’t see all of your data without a paid account, Ancestry will delete information if you email links that would redirect you to the proper site if you had an account. <a href=\"https://www.ancestry.com/account/\" target=\"_blank\" rel=\"noopener noreferrer\">Sign up for a free account</a> (not a free trial!), and then search for your information on the sidebar. Click on everything that includes a state you have ever lived at, even if it’s not your current state. Cut and paste the URLs, even if they all direct to a sales page, and email them to <a href=\"mailto:privacy@ancestry.com\" target=\"_blank\" rel=\"noopener noreferrer\">privacy@ancestry.com</a>. Alternatively, you can submit individual URLs via <a href=\"https://support.ancestry.com/s/reportissue?language=en_US\" target=\"_blank\" rel=\"noopener noreferrer\">this content removal form</a>.</p>"
+		},
+		{
+			"id": "familytreenow",
+			"name": "FamilyTreeNow",
+			"symbols": [
+				"☠"
+			],
+			"searchUrl": "",
+			"optOutUrl": "https://www.familytreenow.com/optout",
+			"instructionsHtml": "<p>Search for yourself and <a href=\"https://www.familytreenow.com/optout\" target=\"_blank\" rel=\"noopener noreferrer\">remove your information</a>.</p>"
+		},
+		{
+			"id": "fastpeoplesearch-com",
+			"name": "FastPeopleSearch.com",
+			"symbols": [
+				"☠"
+			],
+			"searchUrl": "https://www.fastpeoplesearch.com/",
+			"optOutUrl": "https://www.fastpeoplesearch.com/optout",
+			"instructionsHtml": "<p><a href=\"https://www.fastpeoplesearch.com/\" target=\"_blank\" rel=\"noopener noreferrer\">Look for</a> and <a href=\"https://www.fastpeoplesearch.com/optout\" target=\"_blank\" rel=\"noopener noreferrer\">remove your information</a>. You may need to solve a captcha.</p>"
+		},
+		{
+			"id": "usphonebook",
+			"name": "USPhoneBook",
+			"symbols": [
+				"☠"
+			],
+			"searchUrl": "",
+			"optOutUrl": "https://www.usphonebook.com/opt-out/",
+			"instructionsHtml": "<p>Look for your number and <a href=\"https://www.usphonebook.com/opt-out/\" target=\"_blank\" rel=\"noopener noreferrer\">opt out</a>. If the opt-out link just hangs, email <a href=\"mailto:support+optout@usphonebook.com\" target=\"_blank\" rel=\"noopener noreferrer\">support+optout@usphonebook.com</a> for help.</p>"
+		},
+		{
+			"id": "archives",
+			"name": "Archives",
+			"symbols": [],
+			"searchUrl": "https://www.archives.com/search/ancestor/checkout",
+			"optOutUrl": "https://www.archives.com/Optout",
+			"instructionsHtml": "<p>To find your information, you must <a href=\"https://www.archives.com/search/ancestor/checkout\" target=\"_blank\" rel=\"noopener noreferrer\">sign up for a free trial</a> (and then cancel). Then, <a href=\"https://www.archives.com/Optout\" target=\"_blank\" rel=\"noopener noreferrer\">opt out</a> if you found your data.</p>"
+		},
+		{
+			"id": "classmates-com",
+			"name": "Classmates.com",
+			"symbols": [],
+			"searchUrl": "",
+			"optOutUrl": "https://help.classmates.com/hc/en-us/articles/115002224171-How-can-I-cancel-my-membership-",
+			"instructionsHtml": "<p>Cancel your free or paid membership following <a href=\"https://help.classmates.com/hc/en-us/articles/115002224171-How-can-I-cancel-my-membership-\" target=\"_blank\" rel=\"noopener noreferrer\">these instructions</a>.</p>"
+		},
+		{
+			"id": "cyber-background-checks",
+			"name": "Cyber Background Checks",
+			"symbols": [],
+			"searchUrl": "https://www.cyberbackgroundchecks.com/",
+			"optOutUrl": "https://www.cyberbackgroundchecks.com/removal",
+			"instructionsHtml": "<p>Look for <a href=\"https://www.cyberbackgroundchecks.com/\" target=\"_blank\" rel=\"noopener noreferrer\">your information</a> and <a href=\"https://www.cyberbackgroundchecks.com/removal\" target=\"_blank\" rel=\"noopener noreferrer\">opt out</a>.</p>"
+		},
+		{
+			"id": "facecheck",
+			"name": "Facecheck",
+			"symbols": [],
+			"searchUrl": "https://Facecheck.id",
+			"optOutUrl": "https://facecheck.id/Face-Search/RemoveMyPhotos",
+			"instructionsHtml": "<p><a href=\"https://Facecheck.id\" target=\"_blank\" rel=\"noopener noreferrer\">Facecheck.id</a> is reverse image search software that uses an uploaded image to locate your face across in photos and videos on major social media platforms. If this type of search is something you are concerned about, you can <a href=\"https://facecheck.id/Face-Search/RemoveMyPhotos\" target=\"_blank\" rel=\"noopener noreferrer\">remove your face from its search engine</a> by searching for your image, uploading a driver’s license or ID card (you can hide your name, address and ID number) or a selfie with your face and two fingers touching your chin. Note that this will not remove your image from the various websites on which it was found, but simply will not allow people to search for it on the Facecheck site. Facecheck also states that it makes an exception for violent criminals.</p>"
+		},
+		{
+			"id": "familysearch",
+			"name": "FamilySearch",
+			"symbols": [],
+			"searchUrl": "https://www.familysearch.org/search/",
+			"optOutUrl": "https://submit-irm.trustarc.com/services/validation/b8d6e704-e5b1-42a0-9f86-bbdec35939a1",
+			"instructionsHtml": "<p><a href=\"https://www.familysearch.org/\" target=\"_blank\" rel=\"noopener noreferrer\">Sign up for a free account</a> and <a href=\"https://www.familysearch.org/search/\" target=\"_blank\" rel=\"noopener noreferrer\">search historical records</a>. Copy the URLs for the records with your information, and <a href=\"https://submit-irm.trustarc.com/services/validation/b8d6e704-e5b1-42a0-9f86-bbdec35939a1\" target=\"_blank\" rel=\"noopener noreferrer\">submit this opt-out form</a>. You will need to verify your email address.</p>"
+		},
+		{
+			"id": "freepeopledirectory",
+			"name": "FreePeopleDirectory",
+			"symbols": [],
+			"searchUrl": "https://www.freepeopledirectory.com",
+			"optOutUrl": "https://www.spokeo.com/optout",
+			"instructionsHtml": "<p><a href=\"https://www.freepeopledirectory.com\" target=\"_blank\" rel=\"noopener noreferrer\">Search for your information</a>. If you find it, you can opt out on <a href=\"https://www.spokeo.com/optout\" target=\"_blank\" rel=\"noopener noreferrer\">Spokeo’s opt-out page</a>. Make sure to scroll down to the grammatically incorrect “opt out your information” section.</p>"
+		},
+		{
+			"id": "infotracer",
+			"name": "InfoTracer",
+			"symbols": [],
+			"searchUrl": "https://www.infotracer.com",
+			"optOutUrl": "https://infotracer.com/optout/",
+			"instructionsHtml": "<p><a href=\"https://www.infotracer.com\" target=\"_blank\" rel=\"noopener noreferrer\">Find your information</a> and opt out by <a href=\"https://infotracer.com/optout/\" target=\"_blank\" rel=\"noopener noreferrer\">filling out the form</a>. You can also mail in <a href=\"https://members.infotracer.com/tspec/shared/assets/data_opt_out_form.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">a different form</a> or fax it to 1-617-933-9946.</p>"
+		},
+		{
+			"id": "national-public-data",
+			"name": "National Public Data",
+			"symbols": [],
+			"searchUrl": "https://nationalpublicdata.com/search",
+			"optOutUrl": "https://nationalpublicdata.com/optout.html",
+			"instructionsHtml": "<p><a href=\"https://nationalpublicdata.com/search\" target=\"_blank\" rel=\"noopener noreferrer\">Search for your data</a>, copy the unique URL, and paste it in the <a href=\"https://nationalpublicdata.com/optout.html\" target=\"_blank\" rel=\"noopener noreferrer\">opt-out form</a>. You’ll then need to share your email address and verify the opt-out request via email.</p>"
+		},
+		{
+			"id": "opendatausa",
+			"name": "OpenDataUSA",
+			"symbols": [],
+			"searchUrl": "https://opendatausa.com/optout",
+			"optOutUrl": "https://opendatausa.com/optout",
+			"instructionsHtml": "<p>OpenDataUSA has personal information as well as political donations. <a href=\"https://opendatausa.com/optout\" target=\"_blank\" rel=\"noopener noreferrer\">Search for your records</a>, and check the box next to each record you want removed from the database. Once you&#x27;ve selected all the records, click the &quot;Remove Selected&quot; button at the bottom of the page. Fill out your name, address, email address, relationship to yourself, and an email address. (Note that the site will only recognize email addresses from Gmail, Yahoo, Outlook or other large providers as valid.) When you get an email, click on “confirm and remove.”</p>"
+		},
+		{
+			"id": "peoplebyname",
+			"name": "PeopleByName",
+			"symbols": [],
+			"searchUrl": "https://www.peoplebyname.com/people",
+			"optOutUrl": "https://www.peoplebyname.com/remove.php",
+			"instructionsHtml": "<p><a href=\"https://www.peoplebyname.com/people\" target=\"_blank\" rel=\"noopener noreferrer\">Look up your name</a>. Or, you can fill in your name in the URL like this: https://www.peoplebyname.com/people/[Last_Name]/[First_Name]. Opt out <a href=\"https://www.peoplebyname.com/remove.php\" target=\"_blank\" rel=\"noopener noreferrer\">for each record</a>.</p>"
+		},
+		{
+			"id": "peoplesearchnow",
+			"name": "PeopleSearchNow",
+			"symbols": [],
+			"searchUrl": "",
+			"optOutUrl": "https://www.peoplesearchnow.com/opt-out",
+			"instructionsHtml": "<p>Find your information and <a href=\"https://www.peoplesearchnow.com/opt-out\" target=\"_blank\" rel=\"noopener noreferrer\">opt out</a>.</p>"
+		},
+		{
+			"id": "pimeyes",
+			"name": "PimEyes",
+			"symbols": [
+				"🎫"
+			],
+			"searchUrl": "https://pimeyes.com/",
+			"optOutUrl": "https://pimeyes.com/en/opt-out-request-form",
+			"instructionsHtml": "<p>PimEyes is an online face search engine that uses face recognition to perform a reverse image search, finding pictures of your face (or others like it) throughout the Internet. If you want to see if your photographs are in PimEyes’ database, consider <a href=\"https://pimeyes.com/\" target=\"_blank\" rel=\"noopener noreferrer\">uploading a photo</a>. (I used a very public photo that I know is already online, but you can also take a photo with your camera—which PimEyes claims it does not store.) To opt out, you’ll need to <a href=\"https://pimeyes.com/en/opt-out-request-form\" target=\"_blank\" rel=\"noopener noreferrer\">upload an image of your face</a>, and also attach a photo ID with all sensitive data (other than your name and photograph) blurred. The easiest way to do this, in my opinion, is through Signal, the encrypted messaging app, which has a blur feature described <a href=\"https://signal.org/blog/blur-tools/\" target=\"_blank\" rel=\"noopener noreferrer\">in its blog</a>. You can also use tools such as Photoshop or even make a copy of your ID and use a Sharpie. Finally, you’ll need to provide your email address.</p>"
+		},
+		{
+			"id": "privateeye",
+			"name": "PrivateEye",
+			"symbols": [],
+			"searchUrl": "https://www.privateeye.com/",
+			"optOutUrl": "https://www.privateeye.com/removal",
+			"instructionsHtml": "<p><a href=\"https://www.privateeye.com/\" target=\"_blank\" rel=\"noopener noreferrer\">Look for your information</a> and <a href=\"https://www.privateeye.com/removal\" target=\"_blank\" rel=\"noopener noreferrer\">initiate the opt-out</a>, if needed. You will receive a link for a record removal form that you’ll have to fill out.</p>"
+		},
+		{
+			"id": "privaterecords",
+			"name": "PrivateRecords",
+			"symbols": [],
+			"searchUrl": "https://www.privaterecords.net/name/landing",
+			"optOutUrl": "https://www.privaterecords.net/api/helper/optOutLight/search",
+			"instructionsHtml": "<p><a href=\"https://www.privaterecords.net/name/landing\" target=\"_blank\" rel=\"noopener noreferrer\">Search for your name and state</a> and <a href=\"https://www.privaterecords.net/api/helper/optOutLight/search\" target=\"_blank\" rel=\"noopener noreferrer\">opt out</a>.</p>"
+		},
+		{
+			"id": "propertyrecs",
+			"name": "PropertyRecs",
+			"symbols": [],
+			"searchUrl": "https://dashboard.propertyrecs.com/opt-out",
+			"optOutUrl": "https://dashboard.propertyrecs.com/opt-out",
+			"instructionsHtml": "<p>Search for your name and state in the <a href=\"https://dashboard.propertyrecs.com/opt-out\" target=\"_blank\" rel=\"noopener noreferrer\">opt-out page</a>, then opt out if needed.</p>"
+		},
+		{
+			"id": "rehold",
+			"name": "Rehold",
+			"symbols": [],
+			"searchUrl": "https://rehold.com/",
+			"optOutUrl": "https://rehold.com/",
+			"instructionsHtml": "<p>Look up your home address here: <a href=\"https://rehold.com/\" target=\"_blank\" rel=\"noopener noreferrer\">https://rehold.com/</a>. If there is a number or name next to it you’d like removed, click on the red “remove” button next to it. You will need to enter your name and email address and solve a captcha.</p>"
+		},
+		{
+			"id": "searchbug",
+			"name": "Searchbug",
+			"symbols": [
+				"💰"
+			],
+			"searchUrl": "https://www.searchbug.com/",
+			"optOutUrl": "https://www.searchbug.com/contact-us.aspx",
+			"instructionsHtml": "<p>Unfortunately, you have to sign up with a credit card to search for <a href=\"https://www.searchbug.com/\" target=\"_blank\" rel=\"noopener noreferrer\">your information</a>, though your first search is free. You can contact Searchbug using the <a href=\"https://www.searchbug.com/contact-us.aspx\" target=\"_blank\" rel=\"noopener noreferrer\">contact form or chat link</a> or via phone or text at (760) 454-7301 or via fax at (760) 454-7341 to ask them to block the display of your personal information.</p>"
+		},
+		{
+			"id": "searchpeoplefree",
+			"name": "SearchPeopleFree",
+			"symbols": [],
+			"searchUrl": "https://www.searchpeoplefree.com/",
+			"optOutUrl": "https://www.searchpeoplefree.com/opt-out",
+			"instructionsHtml": "<p>Find <a href=\"https://www.searchpeoplefree.com/\" target=\"_blank\" rel=\"noopener noreferrer\">your information</a>, making sure to search by name, phone number, address and email address: <a href=\"https://www.searchpeoplefree.com/opt-out\" target=\"_blank\" rel=\"noopener noreferrer\">Opt out</a>.</p>"
+		},
+		{
+			"id": "searchquarry",
+			"name": "SearchQuarry",
+			"symbols": [],
+			"searchUrl": "https://www.searchquarry.com/",
+			"optOutUrl": "https://members.searchquarry.com/removeMyData/",
+			"instructionsHtml": "<p>Find <a href=\"https://www.searchquarry.com/\" target=\"_blank\" rel=\"noopener noreferrer\">your information</a>. If it’s listed, <a href=\"https://members.searchquarry.com/removeMyData/\" target=\"_blank\" rel=\"noopener noreferrer\">opt out</a> You will need to click the verification link in your inbox to finalize the opt out.</p>"
+		},
+		{
+			"id": "social-catfish",
+			"name": "Social Catfish",
+			"symbols": [],
+			"searchUrl": "https://socialcatfish.com",
+			"optOutUrl": "https://socialcatfish.com/opt-out/",
+			"instructionsHtml": "<p>Find <a href=\"https://socialcatfish.com\" target=\"_blank\" rel=\"noopener noreferrer\">your information</a>. Record the URL of each page that has your information. Then, go to the <a href=\"https://socialcatfish.com/opt-out/\" target=\"_blank\" rel=\"noopener noreferrer\">opt-out page</a> and scroll down to the instructions for removing URLs, email, phone number, and address. (Make sure to only ask for information to be removed if you already see it on the site.) You’ll need to provide your email address and click on a confirmation link to complete the opt-out process.</p>"
+		},
+		{
+			"id": "spyfly",
+			"name": "SpyFly",
+			"symbols": [
+				"💰"
+			],
+			"searchUrl": "https://www.spyfly.com",
+			"optOutUrl": "https://www.spyfly.com/help-center/privacy-requests",
+			"instructionsHtml": "<p>Look for <a href=\"https://www.spyfly.com\" target=\"_blank\" rel=\"noopener noreferrer\">your data</a>. Then, <a href=\"https://www.spyfly.com/help-center/privacy-requests\" target=\"_blank\" rel=\"noopener noreferrer\">opt out</a>. You can also try emailing <a href=\"mailto:support@spyfly.com\" target=\"_blank\" rel=\"noopener noreferrer\">support@spyfly.com</a>. You’ll need to provide your name, age, address, and email address. Make sure SpyFly has information you&#x27;d like removed before volunteering these things.</p>"
+		},
+		{
+			"id": "truepeoplesearch-com",
+			"name": "TruePeopleSearch.com",
+			"symbols": [],
+			"searchUrl": "https://www.truepeoplesearch.com/removal",
+			"optOutUrl": "https://www.truepeoplesearch.com/removal",
+			"instructionsHtml": "<p>Follow the <a href=\"https://www.truepeoplesearch.com/removal\" target=\"_blank\" rel=\"noopener noreferrer\">removal instructions</a>. You will need to enter your name, city and state, and email address, and then you’ll need to solve several captchas to see if you are listed, after which you can remove your information.</p>"
+		},
+		{
+			"id": "truepeoplesearch-net",
+			"name": "TruePeopleSearch.net",
+			"symbols": [],
+			"searchUrl": "https://truepeoplesearch.net",
+			"optOutUrl": "https://docs.google.com/forms/d/e/1FAIpQLSeCPggzv4iXE20iUjcr6vdVWxBOblCyGwDLcO-jZA5j2YF5fQ/viewform",
+			"instructionsHtml": "<p>First, look for your <a href=\"https://truepeoplesearch.net\" target=\"_blank\" rel=\"noopener noreferrer\">information</a>. Make sure to close any additional pages the site opens, and do not click on any of the “top rated background search services” links. If your information shows up, opt out by entering the URL and other information <a href=\"https://docs.google.com/forms/d/e/1FAIpQLSeCPggzv4iXE20iUjcr6vdVWxBOblCyGwDLcO-jZA5j2YF5fQ/viewform\" target=\"_blank\" rel=\"noopener noreferrer\">into this form</a>.</p>"
+		},
+		{
+			"id": "unite-4heritage",
+			"name": "Unite 4Heritage",
+			"symbols": [],
+			"searchUrl": "https://www.unite4heritage.org/",
+			"optOutUrl": "https://www.unite4heritage.org/opt-out",
+			"instructionsHtml": "<p>Search for <a href=\"https://www.unite4heritage.org/\" target=\"_blank\" rel=\"noopener noreferrer\">your information</a> by filling out your first and last name, leaving off the city and state. Paste the URL in the <a href=\"https://www.unite4heritage.org/opt-out\" target=\"_blank\" rel=\"noopener noreferrer\">opt-out page</a>, and click on “submit opt-out request.” Type in your email address. When you get an email, click the “confirm request” button.</p>"
+		},
+		{
+			"id": "united-states-phone-book",
+			"name": "United States Phone Book",
+			"symbols": [],
+			"searchUrl": "https://www.unitedstatesphonebook.com/search.php",
+			"optOutUrl": "https://www.unitedstatesphonebook.com/contact.php",
+			"instructionsHtml": "<p>Search for <a href=\"https://www.unitedstatesphonebook.com/search.php\" target=\"_blank\" rel=\"noopener noreferrer\">your information</a>. If your address is listed and you want it removed, enter the telephone number and zip code listed on the above site <a href=\"https://www.unitedstatesphonebook.com/contact.php\" target=\"_blank\" rel=\"noopener noreferrer\">in this page</a>.</p>"
+		},
+		{
+			"id": "unmask",
+			"name": "UnMask",
+			"symbols": [],
+			"searchUrl": "https://unmask.com/",
+			"optOutUrl": "https://unmask.com/opt-out/",
+			"instructionsHtml": "<p>Search for <a href=\"https://unmask.com/\" target=\"_blank\" rel=\"noopener noreferrer\">your information</a>. Once you find your entry, go to the <a href=\"https://unmask.com/opt-out/\" target=\"_blank\" rel=\"noopener noreferrer\">opt out form</a> where you&#x27;ll enter your name, city, and state. They&#x27;ll send a confirmation email with a link to finish the removal process. You&#x27;ll need to solve a couple captchas along the way.</p>"
+		},
+		{
+			"id": "usa-people-search",
+			"name": "USA People Search",
+			"symbols": [],
+			"searchUrl": "https://www.usa-people-search.com/",
+			"optOutUrl": "https://www.usa-people-search.com/removal",
+			"instructionsHtml": "<p><a href=\"https://www.usa-people-search.com/\" target=\"_blank\" rel=\"noopener noreferrer\">Find</a> and <a href=\"https://www.usa-people-search.com/removal\" target=\"_blank\" rel=\"noopener noreferrer\">remove your information</a>.</p>"
+		},
+		{
+			"id": "veripages",
+			"name": "Veripages",
+			"symbols": [],
+			"searchUrl": "https://veripages.com/",
+			"optOutUrl": "https://veripages.com/inner/control-privacy",
+			"instructionsHtml": "<p>Find <a href=\"https://veripages.com/\" target=\"_blank\" rel=\"noopener noreferrer\">your information</a>. To opt out, <a href=\"https://veripages.com/inner/control-privacy\" target=\"_blank\" rel=\"noopener noreferrer\">enter the profile URL</a>, along with your name and email. You will need to fill out a captcha, and confirm the email link to finalize your request.</p>"
+		},
+		{
+			"id": "voterrecords",
+			"name": "VoterRecords",
+			"symbols": [],
+			"searchUrl": "https://voterrecords.com/",
+			"optOutUrl": "",
+			"instructionsHtml": "<p>Go to <a href=\"https://voterrecords.com/\" target=\"_blank\" rel=\"noopener noreferrer\">VoterRecords.com</a>, find your information, scroll to the bottom of the page and click on the&quot;record opt-out&quot; link. This will lead to an opt-out form, which you’ll need to submit. You may receive a verification link you’ll need to click on to verify your opt-out request.</p>"
+		},
+		{
+			"id": "zoominfo",
+			"name": "ZoomInfo",
+			"symbols": [],
+			"searchUrl": "https://privacyrequest.zoominfo.com/remove/verify",
+			"optOutUrl": "https://privacyrequest.zoominfo.com/remove/verify",
+			"instructionsHtml": "<p>Check to see if your information is on ZoomInfo by <a href=\"https://privacyrequest.zoominfo.com/remove/verify\" target=\"_blank\" rel=\"noopener noreferrer\">filling out this form</a>. Opt out if it has an email on record—they will email you a code. ZoomInfo appears to have moved towards focusing primarily on business rather than individuals.</p>"
+		}
+	]
+}

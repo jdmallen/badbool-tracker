@@ -1,0 +1,155 @@
+/* Loosely after bettermotherfuckingwebsite.com */
+body {
+	margin: 40px auto;
+	max-width: 720px;
+	padding: 0 16px;
+	line-height: 1.6;
+	font-size: 18px;
+	color: #444;
+	background: #fff;
+	font-family: system-ui, sans-serif;
+}
+
+h1, h2 {
+	line-height: 1.2;
+}
+
+a {
+	color: #0645ad;
+}
+
+progress {
+	width: 100%;
+}
+
+fieldset {
+	border: 0;
+	padding: 0;
+	margin: 0;
+}
+
+#filters legend {
+	float: left;
+	margin-right: 0.5em;
+	font-weight: bold;
+}
+
+#filters label {
+	margin-right: 1em;
+}
+
+#save-status {
+	min-height: 1.6em;
+	font-size: 0.85em;
+	color: #777;
+}
+
+.symbol {
+	cursor: help;
+	margin-left: 0.25em;
+}
+
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip-path: inset(50%);
+	white-space: nowrap;
+}
+
+.entry {
+	border-top: 1px solid #ddd;
+	padding: 0.75em 0;
+}
+
+.entry-header {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	gap: 0.25em 1em;
+}
+
+.entry h2 {
+	font-size: 1.2em;
+	margin: 0;
+	flex: 1 1 12em;
+}
+
+.collapse-toggle {
+	font: inherit;
+	color: inherit;
+	background: none;
+	border: 0;
+	padding: 0;
+	text-align: left;
+	cursor: default;
+}
+
+.status-group label {
+	margin-right: 0.6em;
+	white-space: nowrap;
+	cursor: pointer;
+}
+
+.status-note {
+	flex-basis: 100%;
+	font-size: 0.8em;
+	color: #777;
+}
+
+.status-note:empty {
+	display: none;
+}
+
+.links {
+	margin: 0.4em 0;
+}
+
+.instructions summary {
+	cursor: pointer;
+}
+
+.instructions p {
+	margin: 0.5em 0;
+}
+
+/* Requested: gentle highlight so pending follow-ups stand out */
+.entry[data-status="requested"] h2 {
+	color: #8a5a00;
+}
+
+/* Done (removed or not present): collapsed to a faded header until expanded */
+.entry.done {
+	opacity: 0.65;
+}
+
+.entry.done .collapse-toggle {
+	cursor: pointer;
+}
+
+.entry[data-status="removed"] .collapse-toggle {
+	text-decoration: line-through;
+}
+
+.entry[data-status="not-present"] .collapse-toggle {
+	font-style: italic;
+}
+
+.entry.done .collapse-toggle::before {
+	content: "▸ ";
+	display: inline-block;
+	width: 1em;
+}
+
+.entry.done.expanded .collapse-toggle::before {
+	content: "▾ ";
+}
+
+.entry.done:not(.expanded) .entry-body {
+	display: none;
+}
+
+.entry.done.expanded {
+	opacity: 1;
+}
