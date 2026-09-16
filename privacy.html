@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Privacy — BADBOOL Tracker</title>
+		<link rel="stylesheet" href="/src/style.css">
+	</head>
+	<body>
+		<header>
+			<h1>Privacy</h1>
+			<p><a href="/">← Back to the tracker</a></p>
+		</header>
+		<main>
+			<h2>By default, nothing leaves your browser</h2>
+			<p>
+				Your progress — which sites you've requested removal from, your notes, timestamps —
+				is stored only in this browser's <code>localStorage</code>. Nothing is sent to a
+				server unless you sign in. Clearing your browser's site data erases it, so export a
+				backup (the "Export JSON" button) before you do that.
+			</p>
+
+			<h2>If you sign in with GitHub</h2>
+			<p>To sync your progress across devices, we store:</p>
+			<ul>
+				<li>A per-app opaque user id assigned by the sign-in provider (different for this app than for any
+					other app you've signed into with GitHub) — never your GitHub username or email.</li>
+				<li>Your site statuses, notes, and timestamps (the same data kept locally).</li>
+			</ul>
+			<p>
+				This is stored in Azure Table Storage. It is <strong>not end-to-end encrypted</strong> —
+				the site operator can technically read it. Signing in sets one authentication cookie;
+				there is no analytics, no ads, and no third-party scripts on this site.
+			</p>
+			<p>
+				<strong>Advice:</strong> don't put passwords, full Social Security numbers, or other ID
+				numbers in your notes.
+			</p>
+
+			<h2>Deleting your data</h2>
+			<p>
+				Export a backup first if you want to keep a copy. Then use "Delete my cloud data" in
+				the tracker header while signed in — this permanently removes your row from cloud
+				storage. Your local browser copy is unaffected unless you also use "Clear all progress."
+			</p>
+
+			<h2>Questions</h2>
+			<p>Open an issue on the project's GitHub repository.</p>
+		</main>
+		<footer>
+			<p>
+				Site list from <a href="https://github.com/yaelwrites/Big-Ass-Data-Broker-Opt-Out-List" target="_blank" rel="noopener noreferrer">BADBOOL</a>,
+				used under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a>.
+				Style inspired by <a href="http://motherfuckingwebsite.com/" target="_blank" rel="noopener noreferrer">motherfuckingwebsite.com</a>
+				and <a href="https://bettermotherfuckingwebsite.com/" target="_blank" rel="noopener noreferrer">bettermotherfuckingwebsite.com</a>.
+			</p>
+		</footer>
+	</body>
+</html>

@@ -1,13 +1,15 @@
-/* Loosely after bettermotherfuckingwebsite.com */
+/* Loosely after bettermotherfuckingwebsite.com: no font-family declared (its
+   whole "font choice" is the browser default serif), colors inverted to a
+   dark theme. */
 body {
 	margin: 40px auto;
 	max-width: 720px;
 	padding: 0 16px;
 	line-height: 1.6;
 	font-size: 18px;
-	color: #444;
-	background: #fff;
-	font-family: system-ui, sans-serif;
+	color: #bbb;
+	background: #000;
+	color-scheme: dark;
 }
 
 h1, h2 {
@@ -15,7 +17,7 @@ h1, h2 {
 }
 
 a {
-	color: #0645ad;
+	color: #f9ba52;
 }
 
 progress {
@@ -38,10 +40,38 @@ fieldset {
 	margin-right: 1em;
 }
 
-#save-status {
+#data-controls {
+	margin: 0.5em 0;
+}
+
+#data-controls button,
+#data-controls .file-input-label {
+	margin-right: 0.6em;
+	font-size: 0.85em;
+}
+
+.file-input-label input[type="file"] {
+	max-width: 10em;
+	font-size: inherit;
+}
+
+#save-status,
+#sync-status {
 	min-height: 1.6em;
 	font-size: 0.85em;
-	color: #777;
+	color: #888;
+}
+
+#auth-controls {
+	font-size: 0.85em;
+}
+
+footer {
+	margin-top: 2em;
+	padding-top: 1em;
+	border-top: 1px solid #222;
+	font-size: 0.8em;
+	color: #888;
 }
 
 .symbol {
@@ -59,7 +89,7 @@ fieldset {
 }
 
 .entry {
-	border-top: 1px solid #ddd;
+	border-top: 1px solid #222;
 	padding: 0.75em 0;
 }
 
@@ -95,7 +125,7 @@ fieldset {
 .status-note {
 	flex-basis: 100%;
 	font-size: 0.8em;
-	color: #777;
+	color: #888;
 }
 
 .status-note:empty {
@@ -114,9 +144,22 @@ fieldset {
 	margin: 0.5em 0;
 }
 
+.notes-wrapper label {
+	display: block;
+	font-size: 0.85em;
+}
+
+.notes {
+	width: 100%;
+	box-sizing: border-box;
+	font: inherit;
+	font-size: 0.9em;
+	resize: vertical;
+}
+
 /* Requested: gentle highlight so pending follow-ups stand out */
 .entry[data-status="requested"] h2 {
-	color: #8a5a00;
+	color: #75a5ff;
 }
 
 /* Done (removed or not present): collapsed to a faded header until expanded */

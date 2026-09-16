@@ -1,3 +1,6 @@
 node_modules/
 dist/
 data/
+api/node_modules/
+api/local.settings.json
+.azurite/

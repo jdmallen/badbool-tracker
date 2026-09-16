@@ -10,7 +10,9 @@ import urllib.request
 from pathlib import Path
 
 README_URL = "https://raw.githubusercontent.com/yaelwrites/Big-Ass-Data-Broker-Opt-Out-List/master/README.md"
-OUTPUT_PATH = Path(__file__).resolve().parent.parent / "src" / "entries.json"
+REPO_ROOT = Path(__file__).resolve().parent.parent
+OUTPUT_PATH = REPO_ROOT / "src" / "entries.json"
+SITES_OUTPUT_PATH = REPO_ROOT / "api" / "src" / "sites.json"
 
 SYMBOL_MEANINGS = {
 	"💐": "crucial",
@@ -116,6 +118,12 @@ def main():
 	output = {"symbolMeanings": SYMBOL_MEANINGS, "entries": entries}
 	OUTPUT_PATH.write_text(json.dumps(output, ensure_ascii=False, indent="\t") + "\n", encoding="utf-8")
 	print(f"Wrote {len(entries)} entries to {OUTPUT_PATH}")
+
+	# Keeps the API's slug allowlist (validate.js) in sync with the site list
+	slugs = [entry["id"] for entry in entries]
+	SITES_OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
+	SITES_OUTPUT_PATH.write_text(json.dumps(slugs, ensure_ascii=False, indent="\t") + "\n", encoding="utf-8")
+	print(f"Wrote {len(slugs)} slugs to {SITES_OUTPUT_PATH}")
 
 
 if __name__ == "__main__":

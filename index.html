@@ -24,9 +24,26 @@
 				<label><input type="checkbox" name="show" value="removed" checked> Removed</label>
 				<label><input type="checkbox" name="show" value="not-present" checked> Not Present</label>
 			</fieldset>
+			<fieldset id="data-controls">
+				<legend>Data</legend>
+				<button type="button" id="export-json">Export JSON</button>
+				<label class="file-input-label">Import JSON <input type="file" id="import-json" accept="application/json"></label>
+				<button type="button" id="clear-progress">Clear all progress</button>
+			</fieldset>
 			<p id="save-status" role="status"></p>
+			<p id="sync-status" role="status" hidden></p>
+			<p id="auth-controls"></p>
 		</header>
 		<main id="entry-list"></main>
+		<footer>
+			<p>
+				Site list from <a href="https://github.com/yaelwrites/Big-Ass-Data-Broker-Opt-Out-List" target="_blank" rel="noopener noreferrer">BADBOOL</a>,
+				used under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a>.
+				Style inspired by <a href="http://motherfuckingwebsite.com/" target="_blank" rel="noopener noreferrer">motherfuckingwebsite.com</a>
+				and <a href="https://bettermotherfuckingwebsite.com/" target="_blank" rel="noopener noreferrer">bettermotherfuckingwebsite.com</a>.
+				<a href="/privacy.html">Privacy</a>.
+			</p>
+		</footer>
 		<script type="module" src="/src/main.js"></script>
 	</body>
 </html>

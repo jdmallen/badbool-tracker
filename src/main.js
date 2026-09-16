@@ -1,6 +1,10 @@
 import listData from "./entries.json";
+import { STATUSES, createEmptyDocument, normalizeDocument } from "./storage/schema.js";
+import { loadLocalProgress, saveLocalProgress } from "./storage/local.js";
+import { markDirty, initCloudSync, pullAndMerge, pushIfDirty, startAutoSync } from "./storage/cloud.js";
+import { exportDocument, readImportFile, applyImport } from "./importExport.js";
+import { loadAuthState, signInUrl, signOutUrl } from "./auth.js";
 
-const STATUSES = ["open", "requested", "removed", "not-present"];
 const STATUS_LABELS = { open: "Open", requested: "Requested", removed: "Removed", "not-present": "Not Present" };
 // Finished entries collapse to their header and count toward progress
 const DONE_STATUSES = new Set(["removed", "not-present"]);
@@ -11,12 +15,16 @@ const progressBarElement = document.getElementById("progress-bar");
 const legendElement = document.getElementById("legend");
 const filtersElement = document.getElementById("filters");
 const saveStatusElement = document.getElementById("save-status");
+const syncStatusElement = document.getElementById("sync-status");
+const authControlsElement = document.getElementById("auth-controls");
+const exportButton = document.getElementById("export-json");
+const importInput = document.getElementById("import-json");
+const clearButton = document.getElementById("clear-progress");
 
-// { [entryId]: { status, updatedAt } }
-let progress = {};
+let progressDoc = createEmptyDocument();
 
 function statusOf(entryId) {
-	return progress[entryId]?.status ?? "open";
+	return progressDoc.entries[entryId]?.status ?? "open";
 }
 
 function createElement(tagName, attributes = {}, children = []) {
@@ -67,8 +75,8 @@ function renderEntry(entry) {
 		}),
 	]);
 
-	const updatedAt = progress[entry.id]?.updatedAt;
-	const statusNote = createElement("span", { class: "status-note", text: updatedAt && status !== "open" ? `${STATUS_LABELS[status]} ${formatDate(updatedAt)}` : "" });
+	const statusChangedAt = progressDoc.entries[entry.id]?.statusChangedAt;
+	const statusNote = createElement("span", { class: "status-note", text: statusChangedAt && status !== "open" ? `${STATUS_LABELS[status]} ${formatDate(statusChangedAt)}` : "" });
 
 	const links = createElement("p", { class: "links" });
 	if (entry.searchUrl) links.append(createExternalLink(entry.searchUrl, "Search page"));
@@ -82,7 +90,12 @@ function renderEntry(entry) {
 	instructionsBody.innerHTML = entry.instructionsHtml;
 	instructions.append(instructionsBody);
 
-	const body = createElement("div", { class: "entry-body" }, [links, instructions]);
+	const notesId = `notes-${entry.id}`;
+	const notesField = createElement("textarea", { id: notesId, class: "notes", rows: "2" });
+	notesField.value = progressDoc.entries[entry.id]?.notes ?? "";
+	const notes = createElement("p", { class: "notes-wrapper" }, [createElement("label", { for: notesId, text: "Notes" }), notesField]);
+
+	const body = createElement("div", { class: "entry-body" }, [links, instructions, notes]);
 	article.append(createElement("div", { class: "entry-header" }, [heading, statusGroup, statusNote]), body);
 	return article;
 }
@@ -109,27 +122,44 @@ function render() {
 	applyFilters();
 }
 
-async function saveProgress() {
-	saveStatusElement.textContent = "Saving…";
-	try {
-		const response = await fetch("/api/progress", {
-			method: "PUT",
-			headers: { "Content-Type": "application/json" },
-			body: JSON.stringify(progress),
-		});
-		if (!response.ok) throw new Error(`${response.status} ${await response.text()}`);
-		saveStatusElement.textContent = "Saved.";
-	} catch (error) {
-		saveStatusElement.textContent = `Save failed: ${error.message}`;
+// Single write path: stamps modifiedAt (and statusChangedAt on status change),
+// saves locally, and marks the document dirty for the next cloud sync.
+function updateEntry(slug, changes) {
+	const existing = progressDoc.entries[slug] ?? {};
+	const now = new Date().toISOString();
+	const next = { ...existing, modifiedAt: now };
+
+	if ("status" in changes) {
+		if (changes.status && changes.status !== "open") {
+			next.status = changes.status;
+			next.statusChangedAt = now;
+		} else {
+			delete next.status;
+			delete next.statusChangedAt;
+		}
 	}
+	if ("notes" in changes) {
+		if (changes.notes) next.notes = changes.notes;
+		else delete next.notes;
+	}
+
+	if (!next.status && !next.notes) delete progressDoc.entries[slug];
+	else progressDoc.entries[slug] = next;
+
+	persist();
+}
+
+function persist() {
+	const saved = saveLocalProgress(progressDoc);
+	saveStatusElement.textContent = saved ? "Saved in this browser." : "Progress can't be saved in this browser — export a backup so you don't lose it.";
+	markDirty();
 }
 
 entryListElement.addEventListener("change", (event) => {
 	if (event.target.type !== "radio") return;
 	const article = event.target.closest(".entry");
 	const newStatus = event.target.value;
-	if (newStatus === "open") delete progress[article.id];
-	else progress[article.id] = { status: newStatus, updatedAt: new Date().toISOString() };
+	updateEntry(article.id, { status: newStatus });
 
 	const wasExpanded = article.classList.contains("expanded");
 	const replacement = renderEntry(listData.entries.find((entry) => entry.id === article.id));
@@ -142,7 +172,6 @@ entryListElement.addEventListener("change", (event) => {
 
 	renderSummary();
 	applyFilters();
-	saveProgress();
 });
 
 // Done entries collapse to their header; the name button expands them
@@ -155,18 +184,96 @@ entryListElement.addEventListener("click", (event) => {
 	toggle.setAttribute("aria-expanded", String(isExpanded));
 });
 
+// Notes don't trigger a re-render (would drop focus mid-typing); localStorage
+// writes are cheap enough to do on every keystroke.
+entryListElement.addEventListener("input", (event) => {
+	if (!event.target.classList.contains("notes")) return;
+	const entryId = event.target.closest(".entry").id;
+	updateEntry(entryId, { notes: event.target.value });
+});
+
 filtersElement.addEventListener("change", applyFilters);
+
+exportButton.addEventListener("click", () => exportDocument(progressDoc));
+
+importInput.addEventListener("change", async () => {
+	const file = importInput.files[0];
+	importInput.value = "";
+	if (!file) return;
+	try {
+		const { normalized, importedCount, skippedCount } = await readImportFile(file);
+		const mergeChosen = confirm(
+			`Import ${importedCount} site(s)${skippedCount ? `, skip ${skippedCount} invalid` : ""}.\n\n` +
+				"OK = Merge with existing progress (newest change per site wins)\nCancel = Replace existing progress entirely",
+		);
+		progressDoc = applyImport(progressDoc, normalized, mergeChosen ? "merge" : "replace");
+		saveLocalProgress(progressDoc);
+		markDirty();
+		render();
+		saveStatusElement.textContent = `Imported ${importedCount} site(s)${skippedCount ? `, skipped ${skippedCount} invalid` : ""}.`;
+	} catch (error) {
+		saveStatusElement.textContent = `Import failed: ${error.message}`;
+	}
+});
+
+clearButton.addEventListener("click", () => {
+	if (!confirm("Clear all progress? This can't be undone unless you exported a backup.")) return;
+	progressDoc = createEmptyDocument();
+	saveLocalProgress(progressDoc);
+	markDirty();
+	render();
+});
+
+function renderAuthControls(user) {
+	authControlsElement.replaceChildren();
+	if (user) {
+		authControlsElement.append(
+			`Syncing as ${user.username} · `,
+			createElement("button", { type: "button", id: "sync-now", text: "Sync now" }),
+			" · ",
+			createExternalLinkless(signOutUrl(), "Sign out"),
+			" · ",
+			createExternalLinkless("/privacy.html", "Delete my cloud data"),
+		);
+	} else {
+		authControlsElement.append(createExternalLinkless(signInUrl(), "Sign in with GitHub to sync across devices"));
+	}
+}
+
+// Same-origin auth/nav links: no target="_blank", unlike createExternalLink
+function createExternalLinkless(url, label) {
+	return createElement("a", { href: url, text: label });
+}
+
+authControlsElement.addEventListener("click", (event) => {
+	if (event.target.id === "sync-now") pushIfDirty();
+});
 
 async function initialize() {
 	renderLegend();
-	try {
-		const response = await fetch("/api/progress");
-		if (!response.ok) throw new Error(`${response.status}`);
-		progress = await response.json();
-	} catch (error) {
-		saveStatusElement.textContent = `Could not load saved progress (${error.message}). Changes will not be saved.`;
-	}
+	progressDoc = normalizeDocument(loadLocalProgress() ?? createEmptyDocument());
 	render();
+
+	const user = await loadAuthState();
+	renderAuthControls(user);
+	initCloudSync({
+		onStatus: (text) => {
+			syncStatusElement.textContent = text;
+		},
+		getLocalDocument: () => progressDoc,
+		applyDocument: (merged) => {
+			progressDoc = merged;
+			render();
+		},
+	});
+
+	if (user) {
+		syncStatusElement.hidden = false;
+		await pullAndMerge();
+		startAutoSync();
+	} else {
+		syncStatusElement.hidden = true;
+	}
 }
 
 initialize();
