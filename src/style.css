@@ -1,8 +1,15 @@
 /* Loosely after bettermotherfuckingwebsite.com: no font-family declared (its
    whole "font choice" is the browser default serif), colors inverted to a
    dark theme. */
+:root {
+	--status-requested: #75a5ff;
+	--status-removed: #6fcf7f;
+	--status-not-present: #b48ce0;
+	--accent: #f9ba52;
+}
+
 body {
-	margin: 40px auto;
+	margin: 0 auto 40px;
 	max-width: 720px;
 	padding: 0 16px;
 	line-height: 1.6;
@@ -17,53 +24,29 @@ h1, h2 {
 }
 
 a {
-	color: #f9ba52;
+	color: var(--accent);
 }
 
-progress {
-	width: 100%;
+/* Keyboard users can jump past the 48 cards straight to the list, and out of
+   the list to the footer, without tabbing through every disclosure. */
+.skip-link {
+	position: absolute;
+	left: -9999px;
+	top: 0;
+	z-index: 100;
+	padding: 0.6em 1em;
+	color: #000;
+	background: var(--accent);
+	border-radius: 0 0 6px 0;
 }
 
-fieldset {
-	border: 0;
-	padding: 0;
-	margin: 0;
+.skip-link:focus {
+	left: 0;
 }
 
-#filters legend {
-	float: left;
-	margin-right: 0.5em;
-	font-weight: bold;
-}
-
-#filters label {
-	margin-right: 1em;
-}
-
-#data-controls {
-	margin: 0.5em 0;
-}
-
-#data-controls button,
-#data-controls .file-input-label {
-	margin-right: 0.6em;
-	font-size: 0.85em;
-}
-
-.file-input-label input[type="file"] {
-	max-width: 10em;
-	font-size: inherit;
-}
-
-#save-status,
-#sync-status {
-	min-height: 1.6em;
-	font-size: 0.85em;
-	color: #888;
-}
-
-#auth-controls {
-	font-size: 0.85em;
+#entry-list {
+	/* clears the sticky toolbar when the skip link jumps here */
+	scroll-margin-top: 8em;
 }
 
 footer {
@@ -74,11 +57,6 @@ footer {
 	color: #888;
 }
 
-.symbol {
-	cursor: help;
-	margin-left: 0.25em;
-}
-
 .visually-hidden {
 	position: absolute;
 	width: 1px;
@@ -86,113 +64,4 @@ footer {
 	overflow: hidden;
 	clip-path: inset(50%);
 	white-space: nowrap;
-}
-
-.entry {
-	border-top: 1px solid #222;
-	padding: 0.75em 0;
-}
-
-.entry-header {
-	display: flex;
-	flex-wrap: wrap;
-	align-items: baseline;
-	gap: 0.25em 1em;
-}
-
-.entry h2 {
-	font-size: 1.2em;
-	margin: 0;
-	flex: 1 1 12em;
-}
-
-.collapse-toggle {
-	font: inherit;
-	color: inherit;
-	background: none;
-	border: 0;
-	padding: 0;
-	text-align: left;
-	cursor: default;
-}
-
-.status-group label {
-	margin-right: 0.6em;
-	white-space: nowrap;
-	cursor: pointer;
-}
-
-.status-note {
-	flex-basis: 100%;
-	font-size: 0.8em;
-	color: #888;
-}
-
-.status-note:empty {
-	display: none;
-}
-
-.links {
-	margin: 0.4em 0;
-}
-
-.instructions summary {
-	cursor: pointer;
-}
-
-.instructions p {
-	margin: 0.5em 0;
-}
-
-.notes-wrapper label {
-	display: block;
-	font-size: 0.85em;
-}
-
-.notes {
-	width: 100%;
-	box-sizing: border-box;
-	font: inherit;
-	font-size: 0.9em;
-	resize: vertical;
-}
-
-/* Requested: gentle highlight so pending follow-ups stand out */
-.entry[data-status="requested"] h2 {
-	color: #75a5ff;
-}
-
-/* Done (removed or not present): collapsed to a faded header until expanded */
-.entry.done {
-	opacity: 0.65;
-}
-
-.entry.done .collapse-toggle {
-	cursor: pointer;
-}
-
-.entry[data-status="removed"] .collapse-toggle {
-	text-decoration: line-through;
-}
-
-.entry[data-status="not-present"] .collapse-toggle {
-	font-style: italic;
-}
-
-.entry.done .collapse-toggle::before {
-	content: "▸ ";
-	display: inline-block;
-	width: 1em;
-}
-
-.entry.done.expanded .collapse-toggle::before {
-	content: "▾ ";
-}
-
-.entry.done:not(.expanded) .entry-body {
-	display: none;
-}
-
-.entry.done.expanded {
-	opacity: 1;
 }
