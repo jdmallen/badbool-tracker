@@ -33,6 +33,15 @@ describe("EntryCard", () => {
 		expect(wrapper.find(".disclosure").attributes("aria-expanded")).toBe("true");
 	});
 
+	it("marks both disclosures with a chevron", async () => {
+		const wrapper = mount(EntryCard, { props: { entry } });
+		expect(wrapper.findAll(".chevron")).toHaveLength(1);
+
+		await wrapper.find(".disclosure").trigger("click");
+		expect(wrapper.findAll(".chevron")).toHaveLength(2);
+		expect(wrapper.find(".instructions summary .chevron").exists()).toBe(true);
+	});
+
 	it("keeps notes behind an opt-in button until a note exists", async () => {
 		const wrapper = mount(EntryCard, { props: { entry } });
 		await wrapper.find(".disclosure").trigger("click");
