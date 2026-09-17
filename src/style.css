@@ -1,21 +1,19 @@
+@import "./tokens.css";
+
 /* Loosely after bettermotherfuckingwebsite.com: no font-family declared (its
    whole "font choice" is the browser default serif), colors inverted to a
-   dark theme. */
-:root {
-	--status-requested: #75a5ff;
-	--status-removed: #6fcf7f;
-	--status-not-present: #b48ce0;
-	--accent: #f9ba52;
-}
+   dark theme. Every literal below lives in tokens.css. */
 
 body {
-	margin: 0 auto 40px;
-	max-width: 720px;
-	padding: 0 16px;
+	margin: 0 auto 2.5rem;
+	max-width: var(--content-max);
+	padding: 0 var(--page-gutter);
 	line-height: 1.6;
-	font-size: 18px;
-	color: #bbb;
-	background: #000;
+	/* rem, not px: this now scales with the reader's browser font setting
+	   instead of overriding it. 1.125rem is the former 18px at a 16px root. */
+	font-size: 1.125rem;
+	color: var(--text);
+	background: var(--surface);
 	color-scheme: dark;
 }
 
@@ -31,13 +29,13 @@ a {
    the list to the footer, without tabbing through every disclosure. */
 .skip-link {
 	position: absolute;
-	left: -9999px;
+	left: -9999px; /* sentinel: parked off-screen until focused */
 	top: 0;
-	z-index: 100;
+	z-index: var(--z-skip);
 	padding: 0.6em 1em;
-	color: #000;
+	color: var(--text-on-fill);
 	background: var(--accent);
-	border-radius: 0 0 6px 0;
+	border-radius: 0 0 var(--radius-sm) 0;
 }
 
 .skip-link:focus {
@@ -52,9 +50,9 @@ a {
 footer {
 	margin-top: 2em;
 	padding-top: 1em;
-	border-top: 1px solid #222;
-	font-size: 0.8em;
-	color: #888;
+	border-top: 1px solid var(--border-subtle);
+	font-size: var(--font-xs);
+	color: var(--text-dim);
 }
 
 .visually-hidden {

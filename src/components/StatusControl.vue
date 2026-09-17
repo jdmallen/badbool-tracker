@@ -33,7 +33,7 @@ defineEmits(["update:modelValue"]);
 .status-control {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
-	gap: 4px;
+	gap: 0.25rem;
 	border: 0;
 	padding: 0;
 	margin: 0;
@@ -51,40 +51,41 @@ defineEmits(["update:modelValue"]);
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	min-height: 44px;
+	min-height: var(--tap-min);
 	padding: 0 0.4em;
-	border: 1px solid #333;
-	border-radius: 6px;
-	font-size: 0.85em;
+	border: 1px solid var(--border);
+	border-radius: var(--radius-sm);
+	font-size: var(--font-sm);
 	line-height: 1.2;
 	text-align: center;
-	color: #aaa;
+	color: var(--text);
 	cursor: pointer;
-	transition: background 0.12s ease, border-color 0.12s ease, color 0.12s ease;
+	transition: background var(--transition), border-color var(--transition), color var(--transition);
 }
 
 .segment span:hover {
-	border-color: #555;
-	color: #ddd;
+	border-color: var(--border-strong);
+	color: var(--text-strong);
 }
 
 .segment input:focus-visible ~ span {
-	outline: 2px solid #f9ba52;
-	outline-offset: 2px;
+	outline: var(--focus-ring);
+	outline-offset: var(--focus-offset);
 }
 
 .segment input:checked ~ span {
-	color: #000;
+	color: var(--text-on-fill);
 	font-weight: bold;
 	border-color: transparent;
 }
 
-.segment[data-status="open"] input:checked ~ span { background: #999; }
+.segment[data-status="open"] input:checked ~ span { background: var(--status-open); }
 .segment[data-status="requested"] input:checked ~ span { background: var(--status-requested); }
 .segment[data-status="removed"] input:checked ~ span { background: var(--status-removed); }
 .segment[data-status="not-present"] input:checked ~ span { background: var(--status-not-present); }
 
-@media (max-width: 480px) {
+/* 30em = 480px; media-query em is always 16px-relative. */
+@media (max-width: 30em) {
 	.status-control {
 		grid-template-columns: repeat(2, 1fr);
 	}

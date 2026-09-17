@@ -14,7 +14,7 @@ const meaning = computed(() => listData.symbolMeanings[props.symbol] ?? props.sy
 <style scoped>
 .symbol {
 	cursor: help;
-	font-size: 0.9em;
+	font-size: var(--font-md);
 	line-height: 1;
 }
 </style>

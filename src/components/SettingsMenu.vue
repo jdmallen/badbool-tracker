@@ -116,55 +116,55 @@ function handleClear() {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	width: 44px;
-	height: 44px;
+	width: var(--tap-min);
+	height: var(--tap-min);
 	font-size: 1.4em;
 	line-height: 1;
-	color: #999;
+	color: var(--text-muted);
 	background: none;
-	border: 1px solid #2c2c2c;
-	border-radius: 8px;
+	border: 1px solid var(--border);
+	border-radius: var(--radius);
 	cursor: pointer;
 }
 
 .trigger:hover {
-	color: #ddd;
-	border-color: #555;
+	color: var(--text-strong);
+	border-color: var(--border-strong);
 }
 
 .panel {
 	position: absolute;
-	top: calc(100% + 6px);
+	top: calc(100% + 0.375rem);
 	right: 0;
-	z-index: 20;
-	/* Column-aware, not viewport-aware: body is capped at 720px with 16px
-	   gutters, so the panel can never hang outside the content column. rem
-	   rather than em, because mobile font-boosting inflates em here. */
-	width: min(20rem, calc(min(100vw, 720px) - 32px));
+	z-index: var(--z-menu);
+	/* Column-aware, not viewport-aware: the panel is derived from the same
+	   tokens the body uses, so it can never hang outside the content column.
+	   rem rather than em, because mobile font-boosting inflates em here. */
+	width: min(20rem, calc(min(100vw, var(--content-max)) - var(--page-gutter) * 2));
 	padding: 0.9em 1em;
-	background: #0d0d0d;
-	border: 1px solid #333;
-	border-radius: 8px;
-	box-shadow: 0 8px 24px rgb(0 0 0 / 60%);
+	background: var(--surface-raised);
+	border: 1px solid var(--border);
+	border-radius: var(--radius);
+	box-shadow: var(--shadow-panel);
 }
 
 section + section {
 	margin-top: 1em;
 	padding-top: 1em;
-	border-top: 1px solid #222;
+	border-top: 1px solid var(--border-subtle);
 }
 
 h2 {
 	margin: 0 0 0.5em;
-	font-size: 0.7em;
+	font-size: var(--font-micro);
 	text-transform: uppercase;
 	letter-spacing: 0.08em;
-	color: #777;
+	color: var(--text-dim);
 }
 
 .line {
 	margin: 0 0 0.5em;
-	font-size: 0.85em;
+	font-size: var(--font-sm);
 }
 
 .actions {
@@ -179,11 +179,11 @@ h2 {
 .file-label {
 	display: flex;
 	align-items: center;
-	min-height: 36px;
+	min-height: var(--control-h-sm);
 	padding: 0;
 	font: inherit;
-	font-size: 0.85em;
-	color: #f9ba52;
+	font-size: var(--font-sm);
+	color: var(--accent);
 	text-align: left;
 	background: none;
 	border: 0;
@@ -191,7 +191,7 @@ h2 {
 }
 
 .actions .danger {
-	color: #e0736f;
+	color: var(--danger);
 }
 
 .file-label input {
@@ -200,14 +200,14 @@ h2 {
 
 .status {
 	margin: 0.5em 0 0;
-	font-size: 0.75em;
-	color: #777;
+	font-size: var(--font-micro);
+	color: var(--text-dim);
 }
 
 /* Narrow screens: a sheet spanning the full content column, anchored to the
-   title row (.settings goes static) instead of to the 44px trigger, so both
-   edges line up with the page gutters. */
-@media (max-width: 560px) {
+   title row (.settings goes static) instead of to the trigger button, so both
+   edges line up with the page gutters. 35em = 560px. */
+@media (max-width: 35em) {
 	.settings {
 		position: static;
 	}

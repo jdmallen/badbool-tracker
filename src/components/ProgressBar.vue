@@ -51,26 +51,26 @@ const barLabel = computed(() =>
 .bar {
 	display: flex;
 	width: 100%;
-	height: 8px;
-	border-radius: 4px;
+	height: 0.5rem;
+	border-radius: var(--radius-xs);
 	overflow: hidden;
-	background: #1a1a1a;
+	background: var(--surface-sunken);
 }
 
 .segment {
 	height: 100%;
-	transition: width 0.25s ease;
+	transition: width var(--transition-slow);
 }
 
 .segment[data-status="removed"] { background: var(--status-removed); }
 .segment[data-status="not-present"] { background: var(--status-not-present); }
 .segment[data-status="requested"] { background: var(--status-requested); }
-.segment[data-status="open"] { background: #2e2e2e; }
+.segment[data-status="open"] { background: var(--status-open-soft); }
 
 .readout {
 	margin: 0;
-	font-size: 0.8em;
-	color: #999;
+	font-size: var(--font-xs);
+	color: var(--text-muted);
 	display: flex;
 	flex-wrap: wrap;
 	align-items: baseline;
@@ -78,7 +78,7 @@ const barLabel = computed(() =>
 }
 
 .readout strong {
-	color: #ddd;
+	color: var(--text-strong);
 }
 
 .breakdown {
@@ -100,5 +100,5 @@ const barLabel = computed(() =>
 .tally[data-status="removed"]::before { background: var(--status-removed); }
 .tally[data-status="not-present"]::before { background: var(--status-not-present); }
 .tally[data-status="requested"]::before { background: var(--status-requested); }
-.tally[data-status="open"]::before { background: #555; }
+.tally[data-status="open"]::before { background: var(--text-faint); }
 </style>

@@ -14,7 +14,7 @@
 	width: 1em;
 	height: 1em;
 	transform-origin: 50% 50%;
-	transition: transform 0.15s ease;
+	transition: transform var(--transition);
 }
 
 @media (prefers-reduced-motion: reduce) {

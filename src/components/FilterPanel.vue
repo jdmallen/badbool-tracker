@@ -41,7 +41,7 @@ const symbolEntries = Object.entries(listData.symbolMeanings);
 	flex-direction: column;
 	gap: 0.75em;
 	padding: 0.75em 0;
-	border-top: 1px solid #1c1c1c;
+	border-top: 1px solid var(--border-subtle);
 }
 
 fieldset {
@@ -52,10 +52,10 @@ fieldset {
 
 legend {
 	padding: 0;
-	font-size: 0.75em;
+	font-size: var(--font-micro);
 	text-transform: uppercase;
 	letter-spacing: 0.06em;
-	color: #777;
+	color: var(--text-dim);
 }
 
 .chips {
@@ -77,38 +77,38 @@ legend {
 	display: inline-flex;
 	align-items: center;
 	gap: 0.35em;
-	min-height: 36px;
+	min-height: var(--control-h-sm);
 	padding: 0 0.75em;
-	font-size: 0.8em;
-	color: #777;
-	border: 1px solid #2c2c2c;
-	border-radius: 999px;
+	font-size: var(--font-xs);
+	color: var(--text-dim);
+	border: 1px solid var(--border);
+	border-radius: var(--radius-pill);
 	cursor: pointer;
-	transition: border-color 0.12s ease, color 0.12s ease;
+	transition: border-color var(--transition), color var(--transition);
 }
 
 .chip span em {
 	font-style: normal;
-	color: #555;
+	color: var(--text-faint);
 }
 
 .chip span:hover {
-	border-color: #4a4a4a;
-	color: #bbb;
+	border-color: var(--border-strong);
+	color: var(--text);
 }
 
 .chip input:focus-visible ~ span {
-	outline: 2px solid #f9ba52;
-	outline-offset: 2px;
+	outline: var(--focus-ring);
+	outline-offset: var(--focus-offset);
 }
 
 .chip input:checked ~ span {
-	color: #ddd;
-	border-color: #666;
-	background: #161616;
+	color: var(--text-strong);
+	border-color: var(--border-strong);
+	background: var(--surface-sunken);
 }
 
-.chip input:checked ~ span em { color: #999; }
+.chip input:checked ~ span em { color: var(--text-muted); }
 
 .chip[data-status="requested"] input:checked ~ span { border-color: var(--status-requested); }
 .chip[data-status="removed"] input:checked ~ span { border-color: var(--status-removed); }
@@ -123,8 +123,8 @@ legend {
 	align-self: flex-start;
 	padding: 0.3em 0;
 	font: inherit;
-	font-size: 0.8em;
-	color: #f9ba52;
+	font-size: var(--font-xs);
+	color: var(--accent);
 	background: none;
 	border: 0;
 	cursor: pointer;

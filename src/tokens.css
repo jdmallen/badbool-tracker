@@ -1,0 +1,91 @@
+/* Design tokens — the single source of truth for every colour, metric, radius,
+   z-index and duration in the app.
+
+   Component <style> blocks must reference these rather than raw literals; that
+   rule is enforced by src/tokens.test.js, which fails the suite on any hex
+   colour or unapproved px value outside this file.
+
+   Unit policy: rem for anything that must stay a fixed physical size (touch
+   targets, the content column), em for anything that should scale with its
+   local text, px only for hairlines (1px/2px) and the two sentinel values
+   below that are not measurements at all. */
+
+:root {
+	/* ---- Text ramp ----
+	   An even 34-per-channel ramp from #fff to #555, so "one step dimmer"
+	   is the same amount of dimmer wherever it is applied. */
+	--text-bright: #fff;
+	--text-strong: #ddd;
+	--text: #bbb;
+	--text-muted: #999;
+	--text-dim: #777;
+	--text-faint: #555;
+
+	/* Text sitting on a filled status chip, the accent badge or the skip link. */
+	--text-on-fill: #000;
+
+	/* ---- Surfaces ---- */
+	--surface: #000;
+	--surface-raised: #0d0d0d; /* inputs, menus, note fields */
+	--surface-sunken: #1a1a1a; /* progress track, selected chip fill */
+
+	/* ---- Borders ---- */
+	--border-subtle: #1c1c1c; /* hairline dividers between rows and sections */
+	--border: #2c2c2c; /* resting outline on a control */
+	--border-strong: #666; /* hover and selected outline */
+
+	/* ---- Status ----
+	   "Open" needs two weights: #999 reads as a label or a small fill, but
+	   the progress bar paints a wide block against --surface-sunken, where
+	   the same grey would shout over the finished segments. */
+	--status-open: #999;
+	--status-open-soft: #2e2e2e;
+	--status-requested: #75a5ff;
+	--status-removed: #6fcf7f;
+	--status-not-present: #b48ce0;
+
+	/* ---- Accent and intent ---- */
+	--accent: #f9ba52;
+	--accent-dim: #6b4f20; /* the accent at border weight against black */
+	--danger: #e0736f;
+
+	--focus-ring: 2px solid var(--accent);
+	--focus-offset: 2px;
+	--shadow-panel: 0 0.5rem 1.5rem rgb(0 0 0 / 60%);
+
+	/* ---- Page metrics ----
+	   The settings sheet sizes itself from these, so the content column is
+	   described in exactly one place. */
+	--content-max: 45rem; /* 720px at a 16px root */
+	--page-gutter: 1rem;
+
+	/* ---- Control heights ----
+	   --tap-min is the WCAG 2.5.5 target size. The smaller steps are for
+	   controls that already sit inside a tappable row. */
+	--tap-min: 2.75rem; /* 44px */
+	--control-h: 2.5rem; /* 40px */
+	--control-h-sm: 2.25rem; /* 36px */
+	--control-h-xs: 2rem; /* 32px */
+
+	/* ---- Radii ---- */
+	--radius-pill: 999px; /* sentinel: "round the ends", not a measurement */
+	--radius: 0.5rem;
+	--radius-sm: 0.375rem;
+	--radius-xs: 0.25rem;
+
+	/* ---- Type scale ----
+	   em, so each step stays relative to whatever it is nested inside. */
+	--font-micro: 0.75em; /* uppercase micro-labels, timestamps */
+	--font-xs: 0.8em;
+	--font-sm: 0.85em;
+	--font-md: 0.9em;
+
+	/* ---- Motion ---- */
+	--transition: 0.15s ease;
+	--transition-slow: 0.25s ease; /* progress bar width */
+
+	/* ---- Layers ---- */
+	--z-toolbar: 10;
+	--z-menu: 20;
+	--z-skip: 100;
+}

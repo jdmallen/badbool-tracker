@@ -126,13 +126,13 @@ h1 {
 	margin: 0;
 	font-size: 1.6em;
 	line-height: 1.2;
-	color: #ddd;
+	color: var(--text-strong);
 }
 
 .intro {
 	margin: 0.5em 0 1em;
-	font-size: 0.9em;
-	color: #999;
+	font-size: var(--font-md);
+	color: var(--text-muted);
 }
 
 /* Sticky so the progress bar and search stay reachable down a 48-item list */
@@ -140,10 +140,10 @@ h1 {
 	display: block;
 	position: sticky;
 	top: 0;
-	z-index: 10;
+	z-index: var(--z-toolbar);
 	padding: 0.6em 0 0.5em;
-	background: #000;
-	border-bottom: 1px solid #1c1c1c;
+	background: var(--surface);
+	border-bottom: 1px solid var(--border-subtle);
 }
 
 .controls {
@@ -160,26 +160,26 @@ h1 {
 .search-field input {
 	width: 100%;
 	box-sizing: border-box;
-	min-height: 40px;
+	min-height: var(--control-h);
 	padding: 0 0.7em;
 	font: inherit;
-	font-size: 0.9em;
+	font-size: var(--font-md);
 	color: inherit;
-	background: #0d0d0d;
-	border: 1px solid #2c2c2c;
-	border-radius: 8px;
+	background: var(--surface-raised);
+	border: 1px solid var(--border);
+	border-radius: var(--radius);
 }
 
 .sort-field select {
-	min-height: 40px;
+	min-height: var(--control-h);
 	max-width: 10em;
 	padding: 0 0.5em;
 	font: inherit;
-	font-size: 0.85em;
-	color: #bbb;
-	background: #0d0d0d;
-	border: 1px solid #2c2c2c;
-	border-radius: 8px;
+	font-size: var(--font-sm);
+	color: var(--text);
+	background: var(--surface-raised);
+	border: 1px solid var(--border);
+	border-radius: var(--radius);
 	cursor: pointer;
 }
 
@@ -188,20 +188,20 @@ h1 {
 	align-items: center;
 	gap: 0.4em;
 	flex: none;
-	min-height: 40px;
+	min-height: var(--control-h);
 	padding: 0 0.8em;
 	font: inherit;
-	font-size: 0.85em;
-	color: #bbb;
-	background: #0d0d0d;
-	border: 1px solid #2c2c2c;
-	border-radius: 8px;
+	font-size: var(--font-sm);
+	color: var(--text);
+	background: var(--surface-raised);
+	border: 1px solid var(--border);
+	border-radius: var(--radius);
 	cursor: pointer;
 }
 
 .filter-toggle.active {
-	color: #f9ba52;
-	border-color: #6b4f20;
+	color: var(--accent);
+	border-color: var(--accent-dim);
 }
 
 .badge {
@@ -210,10 +210,10 @@ h1 {
 	justify-content: center;
 	min-width: 1.4em;
 	height: 1.4em;
-	font-size: 0.8em;
-	color: #000;
-	background: #f9ba52;
-	border-radius: 999px;
+	font-size: var(--font-xs);
+	color: var(--text-on-fill);
+	background: var(--accent);
+	border-radius: var(--radius-pill);
 }
 
 main {
@@ -226,19 +226,21 @@ main:focus {
 
 .result-count {
 	margin: 0 0 0.5em;
-	font-size: 0.75em;
+	font-size: var(--font-micro);
 	text-transform: uppercase;
 	letter-spacing: 0.06em;
-	color: #666;
+	color: var(--text-dim);
 }
 
 .empty {
 	padding: 2em 0;
-	color: #777;
+	color: var(--text-dim);
 	text-align: center;
 }
 
-@media (max-width: 480px) {
+/* em in a media query is always 16px-relative, unaffected by the root
+   font-size, which is what makes it the portable choice here. 30em = 480px. */
+@media (max-width: 30em) {
 	.controls {
 		flex-wrap: wrap;
 	}

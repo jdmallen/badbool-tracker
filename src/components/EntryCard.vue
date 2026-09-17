@@ -119,14 +119,14 @@ function setNotes(event) {
 
 <style scoped>
 .entry {
-	border-bottom: 1px solid #1c1c1c;
+	border-bottom: 1px solid var(--border-subtle);
 }
 
 .entry-head {
 	display: flex;
 	align-items: center;
 	gap: 0.5em;
-	min-height: 44px;
+	min-height: var(--tap-min);
 }
 
 .disclosure {
@@ -135,7 +135,7 @@ function setNotes(event) {
 	gap: 0.4em;
 	flex: 1 1 auto;
 	min-width: 0;
-	min-height: 44px;
+	min-height: var(--tap-min);
 	padding: 0.2em 0;
 	font: inherit;
 	font-size: 1em;
@@ -147,11 +147,11 @@ function setNotes(event) {
 }
 
 .disclosure:hover .entry-name {
-	color: #fff;
+	color: var(--text-bright);
 }
 
 .disclosure .chevron {
-	color: #666;
+	color: var(--text-dim);
 }
 
 .entry.expanded .disclosure .chevron {
@@ -162,33 +162,33 @@ function setNotes(event) {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
-	color: #ddd;
+	color: var(--text-strong);
 }
 
 .entry[data-status="removed"] .entry-name {
 	text-decoration: line-through;
-	color: #7a7a7a;
+	color: var(--text-dim);
 }
 
 .entry[data-status="not-present"] .entry-name {
 	font-style: italic;
-	color: #7a7a7a;
+	color: var(--text-dim);
 }
 
 .status-badge {
 	flex: none;
-	min-height: 32px;
+	min-height: var(--control-h-xs);
 	padding: 0.15em 0.7em;
 	font: inherit;
-	font-size: 0.75em;
+	font-size: var(--font-micro);
 	border: 1px solid;
-	border-radius: 999px;
+	border-radius: var(--radius-pill);
 	background: none;
 	cursor: pointer;
 	white-space: nowrap;
 }
 
-.status-badge[data-status="open"] { color: #999; border-color: #3a3a3a; }
+.status-badge[data-status="open"] { color: var(--status-open); border-color: var(--border); }
 .status-badge[data-status="requested"] { color: var(--status-requested); border-color: var(--status-requested); }
 .status-badge[data-status="removed"] { color: var(--status-removed); border-color: var(--status-removed); }
 .status-badge[data-status="not-present"] { color: var(--status-not-present); border-color: var(--status-not-present); }
@@ -199,8 +199,8 @@ function setNotes(event) {
 
 .status-note {
 	margin: 0.4em 0 0;
-	font-size: 0.75em;
-	color: #777;
+	font-size: var(--font-micro);
+	color: var(--text-dim);
 }
 
 .entry-body {
@@ -209,14 +209,14 @@ function setNotes(event) {
 
 .links {
 	margin: 0 0 0.5em;
-	font-size: 0.9em;
+	font-size: var(--font-md);
 }
 
 .instructions summary {
 	cursor: pointer;
-	font-size: 0.9em;
-	color: #999;
-	min-height: 32px;
+	font-size: var(--font-md);
+	color: var(--text-muted);
+	min-height: var(--control-h-xs);
 	display: flex;
 	align-items: center;
 	gap: 0.4em;
@@ -230,7 +230,7 @@ function setNotes(event) {
 }
 
 .instructions summary:hover {
-	color: #ddd;
+	color: var(--text-strong);
 }
 
 .instructions[open] .chevron {
@@ -239,15 +239,15 @@ function setNotes(event) {
 
 .instructions :deep(p) {
 	margin: 0.5em 0;
-	font-size: 0.9em;
+	font-size: var(--font-md);
 }
 
 .add-note {
 	margin-top: 0.6em;
 	padding: 0.3em 0;
 	font: inherit;
-	font-size: 0.8em;
-	color: #f9ba52;
+	font-size: var(--font-xs);
+	color: var(--accent);
 	background: none;
 	border: 0;
 	cursor: pointer;
@@ -259,19 +259,19 @@ function setNotes(event) {
 
 .notes-wrapper label {
 	display: block;
-	font-size: 0.8em;
-	color: #999;
+	font-size: var(--font-xs);
+	color: var(--text-muted);
 }
 
 .notes {
 	width: 100%;
 	box-sizing: border-box;
 	font: inherit;
-	font-size: 0.9em;
+	font-size: var(--font-md);
 	color: inherit;
-	background: #0d0d0d;
-	border: 1px solid #333;
-	border-radius: 4px;
+	background: var(--surface-raised);
+	border: 1px solid var(--border);
+	border-radius: var(--radius-xs);
 	padding: 0.4em;
 	resize: vertical;
 }
