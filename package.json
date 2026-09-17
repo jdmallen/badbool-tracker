@@ -11,6 +11,7 @@
 		"build": "vite build",
 		"preview": "vite preview",
 		"extract": "python3 scripts/extract.py",
+		"table:dump": "node api/scripts/dump-table.js",
 		"test": "vitest run"
 	},
 	"devDependencies": {
