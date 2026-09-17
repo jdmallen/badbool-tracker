@@ -20,7 +20,10 @@ jobs:
 
       - uses: pnpm/action-setup@v4
         with:
-          version: 10
+          # 12+, not 10: pnpm-workspace.yaml uses the `allowBuilds` key (pnpm 11+
+          # renamed `onlyBuiltDependencies`), and `pnpm deploy --node-linker` is
+          # relied on below.
+          version: 12
 
       - uses: actions/setup-node@v4
         with:
@@ -32,9 +35,14 @@ jobs:
           pnpm install --frozen-lockfile
           pnpm build
 
-      - name: Install API dependencies
-        run: npm install --omit=dev
-        working-directory: api
+      # Bundles api/ plus its production dependencies into a standalone folder,
+      # resolved from the same pnpm lockfile as the web app — so api versions
+      # are pinned rather than re-resolved on every deploy.
+      # --node-linker=hoisted yields real directories instead of pnpm's symlink
+      # farm, which matters because SWA uploads this folder verbatim
+      # (skip_api_build: true) and symlinks would not survive the upload.
+      - name: Bundle API with production dependencies
+        run: pnpm deploy --filter=badpool-tracker-api --prod --node-linker=hoisted api-dist
 
       - name: Deploy to Azure Static Web Apps
         uses: Azure/static-web-apps-deploy@v1
@@ -43,7 +51,7 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: upload
           app_location: "/"
-          api_location: "api"
+          api_location: "api-dist"
           output_location: "dist"
           skip_api_build: true
 

@@ -3,6 +3,7 @@ import { onBeforeUnmount, onMounted, ref } from "vue";
 import { exportDocument, readImportFile, applyImport } from "../importExport.js";
 import { createEmptyDocument } from "../storage/schema.js";
 import { replaceDocument, setSaveStatus, useProgress } from "../composables/useProgress.js";
+import { deleteCloudData } from "../storage/cloud.js";
 import { signInUrl, signOutUrl } from "../auth.js";
 
 defineProps({
@@ -53,6 +54,18 @@ async function handleImport() {
 	}
 }
 
+// Signs out on success so auto-sync cannot repopulate the row from this tab.
+// Stays signed in on failure, with the reason visible in the sync status line.
+async function handleDeleteCloudData() {
+	const confirmed = confirm(
+		"Delete your cloud copy and sign out?\n\n" +
+			"Your progress stays in this browser — only the synced copy is removed. " +
+			"This can't be undone.",
+	);
+	if (!confirmed) return;
+	if (await deleteCloudData()) window.location.assign(signOutUrl());
+}
+
 function handleClear() {
 	if (!confirm("Clear all progress? This can't be undone unless you exported a backup.")) return;
 	replaceDocument(createEmptyDocument());
@@ -81,7 +94,7 @@ function handleClear() {
 					<div class="actions">
 						<button type="button" @click="emit('sync-now')">Sync now</button>
 						<a :href="signOutUrl()">Sign out</a>
-						<a href="/privacy.html">Delete my cloud data</a>
+						<button type="button" class="danger" @click="handleDeleteCloudData">Delete my cloud data</button>
 					</div>
 				</template>
 				<p v-else class="line">

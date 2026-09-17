@@ -4,3 +4,13 @@ data/
 api/node_modules/
 api/local.settings.json
 .azurite/
+
+# Self-contained API bundle produced by `pnpm deploy` (see the deploy workflow).
+api-dist/
+
+# Azurite emulator state — written into whatever directory azurite is launched
+# from, which is the repo root unless you pass --location .azurite
+AzuriteConfig
+__azurite_db_*.json
+__blobstorage__/
+__queuestorage__/

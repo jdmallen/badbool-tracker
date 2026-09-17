@@ -95,6 +95,27 @@ export async function pushIfDirty({ retry = true } = {}) {
 	}
 }
 
+// The server swallows a missing row and returns 204 either way, so any non-2xx
+// here is a real failure. Reports through onStatus rather than throwing, like
+// the rest of this module, and returns whether the caller may proceed.
+export async function deleteCloudData() {
+	try {
+		const response = await fetch(API_URL, { method: "DELETE" });
+		if (!response.ok) throw new Error(`${response.status}`);
+
+		// Critical, not cosmetic: navigating to sign-out fires visibilitychange
+		// -> hidden, and pushIfDirty sends with keepalive: true. Without clearing
+		// the dirty flag first, that push resurrects the row we just deleted.
+		dirty = false;
+		baseVersion = 0;
+		onStatus("Cloud data deleted");
+		return true;
+	} catch (error) {
+		onStatus(`Delete failed (${error.message})`);
+		return false;
+	}
+}
+
 export function startAutoSync() {
 	document.addEventListener("visibilitychange", () => {
 		if (document.visibilityState === "hidden") pushIfDirty();
