@@ -1,0 +1,11 @@
+{
+	"$schema": "./node_modules/@azure/static-web-apps-cli/schema/swa-cli.config.schema.json",
+	"configurations": {
+		"badbool-tracker": {
+			"appDevserverUrl": "http://localhost:5173",
+			"run": "pnpm dev --port 5173 --strictPort",
+			"apiLocation": "api",
+			"swaConfigLocation": "public"
+		}
+	}
+}

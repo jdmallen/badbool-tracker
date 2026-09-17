@@ -4,3 +4,10 @@ packages:
 
 allowBuilds:
   esbuild: true
+  # Native keychain binding pulled in by @azure/static-web-apps-cli. Only used
+  # by `swa login`/`swa deploy`, but pnpm refuses to install while any build
+  # script is unapproved. Fetches a prebuilt binary; no compiler needed.
+  keytar: true
+  # Pulled in by azurite. Its postinstall is a plain JS codegen step (no native
+  # build) that azurite's table/queue wire format depends on.
+  protobufjs: true
