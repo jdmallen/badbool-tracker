@@ -1,8 +1,7 @@
 # Sync backend (Azure Functions)
 
 Optional. The site works fully with `localStorage` alone; this adds GitHub sign-in and
-cross-device sync via Azure Static Web Apps (SWA) + Azure Table Storage. See
-`../PLAN-cloud-sync.md` for the full design.
+cross-device sync via Azure Static Web Apps (SWA) + Azure Table Storage.
 
 ## What's here
 
@@ -15,24 +14,55 @@ cross-device sync via Azure Static Web Apps (SWA) + Azure Table Storage. See
 
 ## Local development
 
+`api` is a pnpm workspace member, so `pnpm install` at the repo root installs it too —
+don't run `pnpm install` in this directory. (pnpm walks up, installs the *root* project
+instead, and rewrites the root lockfile.)
+
+Run everything from the repo root:
+
 ```sh
-npm install                                    # in api/
-pnpm dlx azurite                               # Table Storage emulator
-pnpm dlx @azure/static-web-apps-cli start http://localhost:5173 --api-location api
+pnpm dev:local      # Azurite + SWA CLI + Vite + Functions host → http://localhost:4280
+pnpm table:dump     # show what's actually stored in the table
 ```
 
 The SWA CLI's auth emulator lets you sign in as fake GitHub users to test sync and
-per-user isolation without a real GitHub app.
+per-user isolation without a real GitHub app. See the root `README.md` for the sign-in
+form's fields and the Node 22 requirement.
+
+### `local.settings.json`
+
+Untracked, because it holds a real connection string in non-emulator use. Create it here
+before the first run:
+
+```json
+{
+	"IsEncrypted": false,
+	"Values": {
+		"FUNCTIONS_WORKER_RUNTIME": "node",
+		"AzureWebJobsStorage": "UseDevelopmentStorage=true",
+		"TABLES_CONNECTION_STRING": "UseDevelopmentStorage=true",
+		"TABLE_NAME": "progress"
+	}
+}
+```
+
+`UseDevelopmentStorage=true` is Azurite's well-known emulator account — not a secret. The
+`progress` table is created on first request, so there's no setup step.
 
 ## Deploying (manual, one-time — not run by this repo's automation)
 
 These steps create billable Azure resources; run them yourself in the Azure Portal / CLI:
 
 1. Create an Azure Static Web App (Free tier), linked to this GitHub repo. Azure offers
-   to generate a GitHub Actions workflow — the one already committed at
-   `.github/workflows/azure-static-web-apps.yml` matches what it would create (pnpm
-   build, `api_location: api`, `skip_api_build: true`); reuse it rather than letting
-   Azure add a second one.
+   to generate a GitHub Actions workflow — use the one already committed at
+   `.github/workflows/azure-static-web-apps.yml` rather than letting Azure add a second
+   one. It differs from Azure's template in one way: because `api` is a pnpm workspace
+   member, `api/node_modules` is a tree of symlinks into the root store, which would
+   dangle once SWA uploads the folder verbatim. So the workflow runs
+   `pnpm deploy --prod --node-linker=hoisted` to bundle this package and its production
+   dependencies into a standalone `api-dist/`, and sets `api_location: api-dist`
+   (with `skip_api_build: true`). Dependency versions therefore come from the same
+   `pnpm-lock.yaml` as the web app instead of being re-resolved on each deploy.
 2. Add the `AZURE_STATIC_WEB_APPS_API_TOKEN` secret to the repo (Azure gives you this
    when you create the SWA resource, or `az staticwebapp secrets list`).
 3. Create a Table Storage account (or reuse an existing Standard LRS one) and a table
