@@ -51,7 +51,7 @@ describe("design tokens", () => {
 		expect(styleSheets.filter((sheet) => sheet.css.trim())).not.toHaveLength(0);
 	});
 
-	it.each(styleSheets)("$name declares no literal colour", ({ css }) => {
+	it.each(styleSheets)("$name declares no literal color", ({ css }) => {
 		expect(css.match(HEX_COLOR) ?? []).toEqual([]);
 		expect(css.match(COLOR_FUNCTION) ?? []).toEqual([]);
 	});

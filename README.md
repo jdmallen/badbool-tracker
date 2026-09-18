@@ -77,12 +77,12 @@ decoding, payload validation and rate-limit logic.
 
 ## Styling
 
-Every colour, control height, radius, z-index and duration lives in `src/tokens.css`;
+Every color, control height, radius, z-index and duration lives in `src/tokens.css`;
 component `<style>` blocks reference those variables rather than literals. `rem` is for
 sizes that must stay fixed (touch targets, the content column), `em` for anything that
 should scale with its surrounding text.
 
-`src/tokens.test.js` enforces this — it fails on any hex colour or colour function outside
+`src/tokens.test.js` enforces this — it fails on any hex color or color function outside
 the token file, on any `var(--…)` that isn't defined there, and on any `px` value other
 than `1px`/`2px` hairlines, the `999px` pill-radius sentinel and the off-screen `-9999px`
 skip link.

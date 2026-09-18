@@ -9,7 +9,7 @@ import { useListView } from "./composables/useListView.js";
 describe("App", () => {
 	beforeEach(() => {
 		// onMounted hits /.auth/me; auth.js swallows the failure, but stub it so
-		// the test does not depend on network behaviour.
+		// the test does not depend on network behavior.
 		vi.stubGlobal("fetch", vi.fn().mockRejectedValue(new Error("offline")));
 		replaceDocument(createEmptyDocument());
 		useListView().clearFilters();

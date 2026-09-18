@@ -1,9 +1,9 @@
-/* Design tokens — the single source of truth for every colour, metric, radius,
+/* Design tokens — the single source of truth for every color, metric, radius,
    z-index and duration in the app.
 
    Component <style> blocks must reference these rather than raw literals; that
    rule is enforced by src/tokens.test.js, which fails the suite on any hex
-   colour or unapproved px value outside this file.
+   color or unapproved px value outside this file.
 
    Unit policy: rem for anything that must stay a fixed physical size (touch
    targets, the content column), em for anything that should scale with its
@@ -37,7 +37,7 @@
 	/* ---- Status ----
 	   "Open" needs two weights: #999 reads as a label or a small fill, but
 	   the progress bar paints a wide block against --surface-sunken, where
-	   the same grey would shout over the finished segments. */
+	   the same gray would shout over the finished segments. */
 	--status-open: #999;
 	--status-open-soft: #2e2e2e;
 	--status-requested: #75a5ff;

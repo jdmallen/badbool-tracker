@@ -42,7 +42,7 @@ jobs:
       # farm, which matters because SWA uploads this folder verbatim
       # (skip_api_build: true) and symlinks would not survive the upload.
       - name: Bundle API with production dependencies
-        run: pnpm deploy --filter=badpool-tracker-api --prod --node-linker=hoisted api-dist
+        run: pnpm deploy --filter=badbool-tracker-api --prod --node-linker=hoisted api-dist
 
       - name: Deploy to Azure Static Web Apps
         uses: Azure/static-web-apps-deploy@v1
